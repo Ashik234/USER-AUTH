@@ -1,0 +1,21 @@
+<%- include('../layouts/header.ejs') %>
+    
+<div class="container mt-4 ">
+<div class="row">
+    <div class="col-md-6">
+      <h1>Update User</h1><br>
+    <form action="" method="post">
+    <label for="name" class="text-dark">Name:</label>
+    <input type="name" name="name" placeholder="Enter Name" value="<%= user.name %>"><br>
+    <label for="email" class="text-dark">Email:</label>
+    <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>"><br>
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <button type="submit" class="btn btn-success mt-4">Update User</button>
+    <button type="submit" class="btn btn-primary mt-4"
+        style="background-color:rgb(11, 89, 233); "><a style="color: white; text-decoration: none;" href="/admin/dashboard">Dashboard</a></button>
+</form>
+</div>  
+</div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

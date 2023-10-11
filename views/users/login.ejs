@@ -1,0 +1,40 @@
+<%- include('../layouts/header.ejs') %>
+
+  <div style="width: 400px;" class="m-auto pt-5">
+    <h2 class="text-center">Login</h2>
+  <form action="/login" method="post" onsubmit="return validateForm()">
+  <div class="form-outline mb-4 mt-4">
+    <input type="email" id="form2Example1" name="email" class="form-control" placeholder="Email address"/>
+  </div>
+  <div class="form-outline mb-4 ">
+    <input type="password" id="form2Example2" name="password" class="form-control" placeholder="Password" />
+  </div>
+  <% if(typeof message!=='undefined' ){ %>
+    <P style="color: rgb(239, 15, 15);">
+        <%= message %>
+    </P>
+    <% } %>
+  <button type="submit" class="btn btn-dark btn-block mt-4">Login</button>
+
+  <div class="text-center">
+    <p class="text-dark">Not a Member? <a href="/register">Register</a></p>
+  </div>
+  </form>
+  </div>
+  
+  
+  <script>
+      function validateForm() {
+        let inputs = document.getElementsByTagName("input")
+  
+        for(let i=0; i< inputs.length; i++){
+          if(inputs[i].value == ""){
+            alert("All fields are required!!")
+            return false;
+          }
+        }
+        return true;
+      }
+  </script>
+  
+  <%- include('../layouts/footer.ejs') %>
